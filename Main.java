@@ -44,7 +44,7 @@ class ChatApplication {
                 case "C":
                     chat();
                     break;
-                case "Q":
+                case "Q";
                     return;
                 default:
                     System.out.println("Invalid command");

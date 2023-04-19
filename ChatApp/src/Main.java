@@ -56,6 +56,7 @@ class ChatApplication {
 				login();
 				break;
 			case "Q":
+				System.out.println("Goodbye!");
 				return;
 			default:
 				System.out.println("Invalid command");
@@ -131,7 +132,7 @@ class ChatApplication {
 			
 		}
 
-		System.out.println("Invalid credentials or account does not exist" + "\n_______________________________________________________");
+		System.out.println("_______________________________________________________"+"\nInvalid credentials or account does not exist");
 	}
 
 	/// *
@@ -143,10 +144,25 @@ class ChatApplication {
 			if (ID.getChatroom().equals(chatroom)) {
 				currentID = ID;
 				System.out.println("Welcome to " + currentID.getChatroom()+"!"+ "\n_______________________________________________________");
-				return;		
+				System.out.println("Please select from the following options: "+ "\n , (J)oin chatroom"+ "\n_______________________________________________________");
+				String command = scanner.nextLine();
+
+	            switch (command) {
+	                case "C":
+	                    create();
+	                    break;
+	                case "J":
+	                	join();
+	                    return;
+	                default:
+	                    System.out.println("Invalid command");
+	            }
+				return;
+				
 			}
 		}
 		System.out.println("Chatroom not found, create one first");
+		return;
 	}
 	// */
 
